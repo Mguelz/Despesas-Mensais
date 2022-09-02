@@ -2,7 +2,7 @@ package desafioCurso;
 
 import java.util.Scanner;
 
-public class Aula200220820 {
+public class Aula20220820 {
 	/*
 	 * qual a renda do mes qunantas despesas valor de cada despesa mostrar total de
 	 * despesas mostrar se esta ok o mes ou nao

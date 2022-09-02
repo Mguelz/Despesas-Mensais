@@ -5,34 +5,36 @@ import java.util.Scanner;
 public class DespeAcumu {
 
 	/*
-	 * O usuraio irá digitar as despesas conforme a demanda e quando a despesa for 
-	 * igual a 0 (despesa == 0) parar de rodar o código fazer a soma das despesas e
-	 * imprimir para a visualização
+	 * O usuario digitará a quantidade de contas que deseja somar
+	 * Digitara o valor de cada conta
+	 * O sitema somara, e exibira o valor total
 	 */
 	public static void main(String[] args) {
 
-		Scanner teclado = new Scanner(System.in);
+		Scanner scanner = new Scanner(System.in);
 
-		int x = 1;
-		double despesaTotal = 0;
 		int qtdContas; // quantidade vezes que gerará sysout para entrada de dados
-
+		int i = 0;
+		double despesaSomando = 0, despesaTotal = 0;
+		
 		// entrada de dados
 		System.out.println("Digite a quantidade de contas a pagar: ");
-		qtdContas = teclado.nextInt();
+		qtdContas = scanner.nextInt();
 
-		for (x = 0; x < qtdContas; x++) {
-			System.out.println("Digite sua despesa:");
-			despesaTotal = teclado.nextDouble();
+		for (i = 0; i < qtdContas; i++) {
+			System.out.println("\nDespesa Número " + i);
+			System.out.println("Digite sua o valor da sua despesa:");
+			despesaSomando = scanner.nextDouble();
+			
+			despesaTotal += despesaSomando;
 		}
 
-		// processamento de dados
-		despesaTotal = despesaTotal * qtdContas;
-
 		// saida de dados
-		System.out.println("Sua despesa no total foi " + despesaTotal + ":");
-
-		teclado.close();
+		System.out.println("------------------------------------------");
+		System.out.println("\n    Sua despesa no total foi " + despesaTotal + ":");
+		System.out.println("\n------------------------------------------");
+		
+		scanner.close();
 	}
 
 }
