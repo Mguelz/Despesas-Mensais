@@ -10,31 +10,30 @@ public class DespeAcumu {
 	 * imprimir para a visualização
 	 */
 	public static void main(String[] args) {
-		
-		Scanner teclado = new Scanner(System.in);
-		
-		
-		int x = 1;
-		int despesaTotal = 0;
-		int qtd = 5; //quantidade de vezes que digitou
-		int qtdContas; // quantidade vezes que gerará sysout para entrada de dados
-		
-		
-		System.out.println("Digite a quantidade de contas a pagar: ");
-		qtdContas = Integer.parseInt(System.out.println("Digite a quantidade de despesas"));
+		Scanner scanner = new Scanner(System.in);
 
-		for (x = 0; x < qtdContas; x++) {
-			System.out.println("Digite sua despesa:"); // fazer laço for para ficar despesa1, despesa2 etc
-			despesaTotal = teclado.nextInt();
+		int qtdContas; // quantidade vezes que gerará sysout para entrada de dados
+		int i = 0;
+		double despesaSomando = 0, despesaTotal = 0;
+		
+		// entrada de dados
+		System.out.println("Digite a quantidade de contas a pagar: ");
+		qtdContas = scanner.nextInt();
+
+		for (i = 0; i < qtdContas; i++) {
+			System.out.println("\nDespesa Número " + i);
+			System.out.println("Digite sua o valor da sua despesa:");
+			despesaSomando = scanner.nextDouble();
+			
+			despesaTotal += despesaSomando;
 		}
 
-		// soma
-		despesaTotal *= qtdContas;
+		// saida de dados
+		System.out.println("------------------------------------------");
+		System.out.println("\n    Sua despesa no total foi " + despesaTotal + ":");
+		System.out.println("\n------------------------------------------");
 
-		// saida
-		System.out.println("Sua despesa no total foi " + despesaTotal + ":");
-
-		teclado.close();
+		scanner.close();
 	}
 
 }
